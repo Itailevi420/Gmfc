@@ -1,0 +1,6 @@
+01 ORDERS.
+     05 ORDER-ID                    PIC X(5).
+     05 CUSTOMER-ID            PIC X(5).  
+     05 PRODUCT-ID               PIC X(5).
+     05 PRODUCT-NAME        PIC X(30).
+     05 QUANTITY                    PIC 9(4).

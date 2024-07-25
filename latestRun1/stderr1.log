@@ -1,0 +1,118 @@
+********************************* TOP OF DATA ******************************************
+2024-07-08T16:41:28.337 ERROR Bqsh: Application error: Error getting access
+> token for service account: java.security.NoSuchAlgorithmException: Default
+> SSLContext not available, iss:
+> mfc-buck-sacc@atomic-rune-427309-e8.iam.gserviceaccount.com
+  jobtime: 164058
+  stepname: STEP01
+  error: com.google.auth.oauth2.GoogleAuthException: Error getting access
+  > token for service account: java.security.NoSuchAlgorithmException: Default
+  > SSLContext not available, iss:
+  > mfc-buck-sacc@atomic-rune-427309-e8.iam.gserviceaccount.com
+ at
+ > com.google.auth.oauth2.GoogleAuthException.createWithTokenEndpointIOExceptio
+ >n(GoogleAuthException.java:164)
+ at
+ > com.google.auth.oauth2.ServiceAccountCredentials.refreshAccessToken(ServiceA
+ >ccountCredentials.java:540)
+ at com.google.auth.oauth2.OAuth2Credentials$1.call(OAuth2Credentials.java:270)
+ at com.google.auth.oauth2.OAuth2Credentials$1.call(OAuth2Credentials.java:267)
+ at java.util.concurrent.FutureTask.run(FutureTask.java:277)
+ at
+ > com.google.auth.oauth2.OAuth2Credentials$RefreshTask.run(OAuth2Credentials.j
+ >ava:635)
+ at
+ > com.google.common.util.concurrent.DirectExecutor.execute(DirectExecutor.java
+ >:31)
+ at
+ > com.google.auth.oauth2.OAuth2Credentials$AsyncRefreshResult.executeIfNew(OAu
+ >th2Credentials.java:582)
+ at
+ > com.google.auth.oauth2.OAuth2Credentials.asyncFetch(OAuth2Credentials.java:2
+ >33)
+ at
+ > com.google.auth.oauth2.OAuth2Credentials.refreshIfExpired(OAuth2Credentials.
+ >java:204)
+ at
+ > com.google.cloud.imf.gzos.Util$GoogleCredentialsProvider.getCredentials(Util
+ >.scala:125)
+ at com.google.cloud.bqsh.cmd.Cp$.run(Cp.scala:44)
+ at com.google.cloud.bqsh.cmd.Cp$.run(Cp.scala:39)
+ at com.google.cloud.bqsh.Bqsh$.runCommand(Bqsh.scala:164)
+ at com.google.cloud.bqsh.Bqsh$.exec(Bqsh.scala:214)
+ at com.google.cloud.bqsh.Bqsh$Interpreter.runWithArgs(Bqsh.scala:117)
+ at com.google.cloud.bqsh.Bqsh$Interpreter.$anonfun$runScript$1(Bqsh.scala:141)
+ at
+ > com.google.cloud.bqsh.Bqsh$Interpreter.$anonfun$runScript$1$adapted(Bqsh.sca
+ >la:139)
+ at
+ > com.google.cloud.bqsh.Bqsh$Interpreter$$Lambda$72/0x0000000065a18d30.apply(U
+ >nknown Source)
+ at scala.collection.immutable.List.foreach(List.scala:333)
+ at com.google.cloud.bqsh.Bqsh$Interpreter.runScript(Bqsh.scala:139)
+ at com.google.cloud.bqsh.Bqsh$.main(Bqsh.scala:65)
+ at com.google.cloud.bqsh.Bqsh.main(Bqsh.scala)
+Caused by: java.net.SocketException: java.security.NoSuchAlgorithmException:
+> Default SSLContext not available
+ at javax.net.ssl.DefaultSSLSocketFactory.a(SSLSocketFactory.java:12)
+ at
+ > javax.net.ssl.DefaultSSLSocketFactory.createSocket(SSLSocketFactory.java:10)
+ at com.ibm.net.ssl.www2.protocol.https.c.createSocket(c.java:236)
+ at sun.net.NetworkClient.doConnect(NetworkClient.java:174)
+ at sun.net.www.http.HttpClient.openServer(HttpClient.java:494)
+ at sun.net.www.http.HttpClient.openServer(HttpClient.java:589)
+ at com.ibm.net.ssl.www2.protocol.https.c.<init>(c.java:138)
+ at com.ibm.net.ssl.www2.protocol.https.c.a(c.java:179)
+ at com.ibm.net.ssl.www2.protocol.https.d.getNewHttpClient(d.java:58)
+ at
+ > sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.
+ >java:1174)
+ at
+ > sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.j
+ >ava:1068)
+ at com.ibm.net.ssl.www2.protocol.https.d.connect(d.java:54)
+ at
+ > sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnecti
+ >on.java:1352)
+ at
+ > sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnectio
+ >n.java:1327)
+ at com.ibm.net.ssl.www2.protocol.https.b.getOutputStream(b.java:98)
+ at
+ > com.google.api.client.http.javanet.NetHttpRequest.execute(NetHttpRequest.jav
+ >a:113)
+ at
+ > com.google.api.client.http.javanet.NetHttpRequest.execute(NetHttpRequest.jav
+ >a:84)
+ at com.google.api.client.http.HttpRequest.execute(HttpRequest.java:1012)
+ at
+ > com.google.auth.oauth2.ServiceAccountCredentials.refreshAccessToken(ServiceA
+ >ccountCredentials.java:535)
+ ... 21 more
+Caused by: java.security.NoSuchAlgorithmException: Default SSLContext not
+> available
+ at sun.security.jca.GetInstance.getInstance(GetInstance.java:171)
+ at javax.net.ssl.SSLContext.getInstance(SSLContext.java:14)
+ at javax.net.ssl.SSLContext.getDefault(SSLContext.java:45)
+ at javax.net.ssl.SSLSocketFactory.getDefault(SSLSocketFactory.java:5)
+ at
+ > javax.net.ssl.HttpsURLConnection.getDefaultSSLSocketFactory(HttpsURLConnecti
+ >on.java:15)
+ at javax.net.ssl.HttpsURLConnection.<init>(HttpsURLConnection.java:12)
+ at com.ibm.net.ssl.www2.protocol.https.b.<init>(b.java:91)
+ at com.ibm.net.ssl.www2.protocol.https.Handler.openConnection(Handler.java:11)
+ at com.ibm.net.ssl.www2.protocol.https.Handler.openConnection(Handler.java:7)
+ at java.net.URL.openConnection(URL.java:1013)
+ at
+ > com.google.api.client.http.javanet.DefaultConnectionFactory.openConnection(D
+ >efaultConnectionFactory.java:31)
+ at
+ > com.google.api.client.http.javanet.NetHttpTransport.buildRequest(NetHttpTran
+ >sport.java:165)
+ at
+ > com.google.api.client.http.javanet.NetHttpTransport.buildRequest(NetHttpTran
+ >sport.java:55)
+ at com.google.api.client.http.HttpRequest.execute(HttpRequest.java:889)
+ ... 22 more
+******************************** BOTTOM OF DATA ***************************************
+

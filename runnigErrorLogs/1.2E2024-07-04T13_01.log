@@ -1,0 +1,50 @@
+********************************* TOP OF DATA **********************************
+2024-07-04T13:01:43.206 ERROR Bqsh: Application error: Unexpected exception
+> reading PKCS#8 data
+  jobtime: 130123
+  stepname: STEP01
+  error: java.io.IOException: Unexpected exception reading PKCS#8 data
+ at
+ > com.google.auth.oauth2.OAuth2Utils.privateKeyFromPkcs8(OAuth2Utils.java:252)
+ at
+ > com.google.auth.oauth2.ServiceAccountCredentials.fromPkcs8(ServiceAccountCre
+ >dentials.java:436)
+ at
+ > com.google.auth.oauth2.ServiceAccountCredentials.fromJson(ServiceAccountCred
+ >entials.java:199)
+ at
+ > com.google.auth.oauth2.GoogleCredentials.fromStream(GoogleCredentials.java:2
+ >00)
+ at
+ > com.google.auth.oauth2.GoogleCredentials.fromStream(GoogleCredentials.java:1
+ >66)
+ at
+ > com.google.cloud.imf.gzos.Util$GoogleCredentialsProvider.<init>(Util.scala:1
+ >15)
+ at com.google.cloud.imf.gzos.IBM$.getCredentialProvider(IBM.scala:125)
+ at com.google.cloud.bqsh.cmd.Cp$.run(Cp.scala:44)
+ at com.google.cloud.bqsh.cmd.Cp$.run(Cp.scala:39)
+ at com.google.cloud.bqsh.Bqsh$.runCommand(Bqsh.scala:164)
+ at com.google.cloud.bqsh.Bqsh$.exec(Bqsh.scala:214)
+  at com.google.cloud.bqsh.Bqsh$Interpreter.runWithArgs(Bqsh.scala:117)
+ at com.google.cloud.bqsh.Bqsh$Interpreter.$anonfun$runScript$1(Bqsh.scala:141)
+ at
+ > com.google.cloud.bqsh.Bqsh$Interpreter.$anonfun$runScript$1$adapted(Bqsh.sca
+ >la:139)
+ at
+ > com.google.cloud.bqsh.Bqsh$Interpreter$$Lambda$72/0x0000000065a17230.apply(U
+ >nknown Source)
+ at scala.collection.immutable.List.foreach(List.scala:333)
+ at com.google.cloud.bqsh.Bqsh$Interpreter.runScript(Bqsh.scala:139)
+ at com.google.cloud.bqsh.Bqsh$.main(Bqsh.scala:65)
+ at com.google.cloud.bqsh.Bqsh.main(Bqsh.scala)
+Caused by: java.security.spec.InvalidKeySpecException: Hardware error,
+> Inappropriate key specification(2)
+ at
+ > com.ibm.crypto.hdwrCCA.provider.RSAKeyFactory.engineGeneratePrivate(RSAKeyFa
+ >ctory.java:66)
+ at java.security.KeyFactory.generatePrivate(KeyFactory.java:383)
+ at
+ > com.google.auth.oauth2.OAuth2Utils.privateKeyFromPkcs8(OAuth2Utils.java:248)
+ ... 18 more
+******************************** BOTTOM OF DATA ********************************

@@ -1,0 +1,45 @@
+********************************* TOP OF DATA *****************************************************
+ WARN StatusConsoleListener Cloud Logging disabled.
+ Set LOG_PROJECT and LOG_ID environment variables to enable Cloud Logging.
+ 2024-07-07T23:32:11.087 INFO ZOS: Using IBMJCECCA JCE Provider
+ Using default Charset 'Cp037'
+ 2024-07-07T23:32:11.252 INFO ZOS: JOBNAME: CARMIS1A
+ JOBID: JOB09976
+ PROCSTEPNAME: BQSH
+ STEPNAME: STEP01
+ DDs:
+ > STEPLIB,SYSPRINT,SYSOUT,STDOUT,STDERR,CEEDUMP,ABNLIGNR,STDIN,QUERY,INFILE,COP
+ >YBOOK,KEYFILE,STDENV,SYSDUMP
+02024-07-07T23:32:11.683 INFO Bqsh: Started BQSH
+   args:
+   jobtime: 233151
+   script: BUCKET=mfc-buck
+     gsutil cp --replace gs://$BUCKET/Orders
+   stepname: STEP01
+   version: 5.12.0
+ + BUCKET=mfc-buck
+ + gsutil cp --replace gs://mfc-buck/Orders
+ 2024-07-07T23:32:14.217 INFO Bqsh: Executing Command
+   args: --replace gs://mfc-buck/Orders
+   command_name: gsutil cp
+   job: jobid: "JOB09976"
+     jobname: "CARMIS1A"
+     jobdate: "240707"
+     jobtime: "233151"
+     step_name: "STEP01"
+     proc_step_name: "BQSH"
+     user: "CARMIS1"
+   jobtime: 233151
+   stepname: STEP01
+ 2024-07-07T23:32:14.272 INFO IBM: reading credentials from
+ > /u/CARMIS1/mfc/keys/keyfile.json
+   jobtime: 233151
+   stepname: STEP01
+ 2024-07-07T23:32:15.096 INFO IBM: loaded keyfile for
+ > mfc-buck-sacc@atomic-rune-427309-e8.iam.gserviceaccount.com
+   jobtime: 233151
+   stepname: STEP01
+******************************** BOTTOM OF DATA ****************************
+
+
+

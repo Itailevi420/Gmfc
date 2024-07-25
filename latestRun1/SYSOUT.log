@@ -1,0 +1,38 @@
+JVMJZBL2004N Log level has been set to: I
+JVMJZBL1001N JZOS batch Launcher Version: 2.4.8 2021-03-18
+JVMJZBL1002N (C) Copyright IBM Corp. 2005, 2016
+JVMJZBL1028I Region requested = 300M, Actual below/above limit = 7144K / 300M, MEMLIMIT=2048M
+JVMJZBL1053I OS Release R27.00 Machine 2828
+JVMJZBL1005I Output from DD:STDENV config shell script:
+JVMJZBL1006I JZOS_MAIN_ARGS =
+JVMJZBL1006I PATH = /bin:/usr/lpp/java/J8.0_64/bin
+JVMJZBL1006I JOBDATE = 240707
+JVMJZBL1006I IBM_JAVA_OPTIONS = -Xms512m -Xmx512m -Xcompressedrefs -Djava.net.preferIPv4Stack=true
+JVMJZBL1006I JOBNAME = CARMIS1A
+JVMJZBL1006I BQSH_ROOT_LOGGER = DEBUG
+JVMJZBL1006I _BPX_SPAWN_SCRIPT = YES
+JVMJZBL1006I _ = /bin/env
+JVMJZBL1006I CLASSPATH = /usr/lpp/java/J8.0_64/lib:/usr/lpp/java/J8.0_64/lib/ext:/usr/include/java_classes/*:/u/CARMIS1/mfc/jars/*
+JVMJZBL1006I LANG = C
+JVMJZBL1006I LIBPATH = /lib:/usr/lib:/usr/lpp/java/J8.0_64/bin:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/java/J8.0_64/lib/s390x/j9vm:
+/usr/lpp/java/J8.0_64/bin/classic:/usr/lib/java_runtime64
+JVMJZBL1006I _BPX_SHAREAS = YES
+JVMJZBL1006I JAVA_HOME = /usr/lpp/java/J8.0_64
+JVMJZBL1006I GKEYFILE = /u/CARMIS1/mfc/keys/keyfile.json
+JVMJZBL1006I JOBTIME = 233151
+JVMJZBL1006I PWD = /u/CARMIS1
+JVMJZBL1012I Java Virtual Machine created. Version information follows:
+ java version "1.8.0_291"
+ Java(TM) SE Runtime Environment (build 8.0.6.31 - pmz6480sr6fp31-20210510_01(SR6 FP31))
+ IBM J9 VM (build 2.9, JRE 1.8.0 z/OS s390x-64-Bit Compressed References 20210423_470221 (JIT enabled, AOT enabled)
+ OpenJ9   - 19b42fd
+ OMR      - a028c6b
+ IBM      - 8165371)
+ JVMJZBL1027I Using output encoding: IBM-1047
+ JVMJZBL1016I MVS commands are ENABLED
+ JVMJZBL1023N Invoking com.google.cloud.bqsh.Bqsh.main()...
+ JVMJZBL1043N The Java virtual machine completed with System.exit(1)
+ JVMJZBL2999I JZOS batch launcher elapsed time=33 seconds, cpu time=47.130000 seconds
+******************************** BOTTOM OF DATA ***********************************************************************
+
+

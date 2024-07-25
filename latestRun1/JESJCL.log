@@ -1,0 +1,47 @@
+********************************* TOP OF DATA **********************************
+        1 //CARMIS1A JOB (A833B1NK),CARMIS,MSGCLASS=D,CLASS=A,
+          //            MSGLEVEL=(1,1),NOTIFY=&SYSUID,REGION=300M
+          //*
+          IEFC653I SUBSTITUTION JCL - (A833B1NK),CARMIS,MSGCLASS=D,CLASS=A,MSGLE
+        2 //      JCLLIB ORDER=(CARMIS1.ALL.CNTL)
+        3 //STEP01 EXEC BQSH
+        4 XXBQSH PROC
+          XX*******************************************************************
+          XX*
+          XX* Copyright 2022 Google LLC All Rights Reserved
+          XX*
+          XX* Licensed under the Apache License, Version 2.0 (the "License");
+          XX* you may not use this file except in compliance with the License.
+          XX* You may obtain a copy of the License at
+          XX*
+          XX*     http://www.apache.org/licenses/LICENSE-2.0
+          XX*
+          XX* Unless required by applicable law or agreed to in writing, softwar
+          XX* distributed under the License is distributed on an "AS IS" BASIS,
+          XX* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or im
+          XX* See the License for the specific language governing permissions an
+          XX* limitations under the License.
+          XX*
+          XX*******************************************************************
+        5 XXBQSH EXEC PGM=JVMLDM86,REGION=0M,
+          XX  PARM='/+I com.google.cloud.bqsh.Bqsh'
+        6 XXSTEPLIB DD DISP=SHR,DSN=IBMUSER.JZOS.SIEALNKE  <<<< CARMI
+        7 //SYSPRINT DD SYSOUT=*
+          X/SYSPRINT DD SYSOUT=*
+        8 XXSYSOUT   DD SYSOUT=*
+        9 XXSTDOUT   DD SYSOUT=*
+       10 XXSTDERR   DD SYSOUT=*
+       11 XXCEEDUMP  DD SYSOUT=*
+       12 XXABNLIGNR DD DUMMY
+       13 //STDIN DD *
+          X/STDIN    DD DUMMY
+       14 XXQUERY    DD DUMMY
+       15 //INFILE DD DSN=CARMIS1.ORDERS,DISP=SHR
+          X/INFILE   DD DUMMY
+       16 //COPYBOOK DD DISP=SHR,DSN=CARMIS1.ORDERCB
+          X/COPYBOOK DD DUMMY
+       17 XXKEYFILE  DD DUMMY
+       18 XXSTDENV   DD *,SYMBOLS=EXECSYS
+       19 //SYSDUMP  DD SYSOUT=*
+       20 XX PEND
+******************************** BOTTOM OF DATA ********************************

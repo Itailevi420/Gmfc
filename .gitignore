@@ -1,0 +1,8 @@
+# ignore ALL .jar .json files
+*.jar
+*.json
+
+# ignore ALL files in ANY directory named ..
+#temp/
+MFC.java/
+keyFiles/

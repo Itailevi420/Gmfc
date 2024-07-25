@@ -1,0 +1,127 @@
+ COMMAND INPUT ===>                                            SCROLL ===> CSR
+********************************* TOP OF DATA **********************************
+2024-07-24T13:32:22.868 ERROR Bqsh: Application error:
+> io.grpc.StatusRuntimeException: UNAVAILABLE
+  jobtime: 132115
+  stepname: STEP01
+  error: com.google.api.gax.rpc.UnavailableException:
+  > io.grpc.StatusRuntimeException: UNAVAILABLE
+ at
+ > com.google.api.gax.rpc.ApiExceptionFactory.createException(ApiExceptionFacto
+ >ry.java:112)
+ at
+ > com.google.api.gax.rpc.ApiExceptionFactory.createException(ApiExceptionFacto
+ >ry.java:41)
+ at
+ > com.google.api.gax.grpc.GrpcApiExceptionFactory.create(GrpcApiExceptionFacto
+ >ry.java:86)
+ at
+ > com.google.api.gax.grpc.GrpcApiExceptionFactory.create(GrpcApiExceptionFacto
+ >ry.java:66)
+ at
+ > com.google.api.gax.grpc.GrpcExceptionCallable$ExceptionTransformingFuture.on
+ >Failure(GrpcExceptionCallable.java:97)
+ at com.google.api.core.ApiFutures$1.onFailure(ApiFutures.java:84)
+ at
+ > com.google.common.util.concurrent.Futures$CallbackListener.run(Futures.java:
+ >1127)
+ at
+ > com.google.common.util.concurrent.DirectExecutor.execute(DirectExecutor.java
+ >:31)
+ at
+ > com.google.common.util.concurrent.AbstractFuture.executeListener(AbstractFut
+ >ure.java:1286)
+ at
+ > com.google.common.util.concurrent.AbstractFuture.complete(AbstractFuture.jav
+ >a:1055)
+ at
+ > com.google.common.util.concurrent.AbstractFuture.setException(AbstractFuture
+ >.java:807)
+ at io.grpc.stub.ClientCalls$GrpcFuture.setException(ClientCalls.java:568)
+  at io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:538)
+ at
+ > io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientC
+ >allListener.java:39)
+ at
+ > io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.ja
+ >va:23)
+ at
+ > io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onCl
+ >ose(ForwardingClientCallListener.java:40)
+ at
+ > com.google.api.gax.grpc.ChannelPool$ReleasingClientCall$1.onClose(ChannelPoo
+ >l.java:570)
+ at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:574)
+ at io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:72)
+ at
+ > io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runIn
+ >ternal(ClientCallImpl.java:742)
+ at
+ > io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runIn
+ >Context(ClientCallImpl.java:723)
+ at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+ at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+ at
+ > java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:11
+ >60)
+ at
+ > java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:6
+ >35)
+ at java.lang.Thread.run(Thread.java:822)
+ Suppressed: com.google.api.gax.rpc.AsyncTaskException: Asynchronous task
+ > failed
+  at
+  > com.google.api.gax.rpc.ApiExceptions.callAndTranslateApiException(ApiExcept
+  >ions.java:57)
+  at com.google.api.gax.rpc.UnaryCallable.call(UnaryCallable.java:112)
+  at
+  > com.google.cloud.bigquery.storage.v1.BigQueryReadClient.createReadSession(B
+    >igQueryReadClient.java:232)
+  at
+  > com.google.cloud.gszutil.io.export.BqAvroExporter.exportData(BqAvroExporter
+  >.java:123)
+  at
+  > com.google.cloud.gszutil.io.exports.NativeExporter.doExport(NativeExporter.
+  >scala:38)
+  at com.google.cloud.bqsh.cmd.Export$.localExport(Export.scala:152)
+  at com.google.cloud.bqsh.cmd.Export$.run(Export.scala:77)
+  at com.google.cloud.bqsh.cmd.Export$.run(Export.scala:33)
+  at com.google.cloud.bqsh.Bqsh$.runCommand(Bqsh.scala:164)
+  at com.google.cloud.bqsh.Bqsh$.exec(Bqsh.scala:201)
+  at com.google.cloud.bqsh.Bqsh$Interpreter.runWithArgs(Bqsh.scala:117)
+  at
+  > com.google.cloud.bqsh.Bqsh$Interpreter.$anonfun$runScript$1(Bqsh.scala:141)
+  at
+  > com.google.cloud.bqsh.Bqsh$Interpreter.$anonfun$runScript$1$adapted(Bqsh.sc
+  >ala:139)
+  at
+  > com.google.cloud.bqsh.Bqsh$Interpreter$$Lambda$72/0x000000005d452330.apply(
+  >Unknown Source)
+  at scala.collection.immutable.List.foreach(List.scala:333)
+  at com.google.cloud.bqsh.Bqsh$Interpreter.runScript(Bqsh.scala:139)
+  at com.google.cloud.bqsh.Bqsh$.main(Bqsh.scala:65)
+  at com.google.cloud.bqsh.Bqsh.main(Bqsh.scala)
+Caused by: io.grpc.StatusRuntimeException: UNAVAILABLE
+ at
+ > io.grpc.StatusRuntimeException.fillInStackTrace(StatusRuntimeException.java:
+ >68)
+ at io.grpc.StatusRuntimeException.<init>(StatusRuntimeException.java:58)
+ at io.grpc.StatusRuntimeException.<init>(StatusRuntimeException.java:50)
+ at io.grpc.Status.asRuntimeException(Status.java:533)
+ ... 14 more
+Caused by: javax.net.ssl.SSLHandshakeException: No appropriate protocol
+> (protocol is disabled or cipher suites are inappropriate)
+ at com.ibm.jsse2.aa.<init>(aa.java:154)
+ at com.ibm.jsse2.ab.<init>(ab.java:16)
+ at com.ibm.jsse2.bb.a(bb.java:67)
+  at com.ibm.jsse2.bj.a(bj.java:243)
+ at com.ibm.jsse2.bj.startHandshake(bj.java:33)
+ at
+ > io.grpc.okhttp.OkHttpProtocolNegotiator.negotiate(OkHttpProtocolNegotiator.j
+ >ava:100)
+ at io.grpc.okhttp.OkHttpTlsUpgrader.upgrade(OkHttpTlsUpgrader.java:63)
+ at io.grpc.okhttp.OkHttpClientTransport$3.run(OkHttpClientTransport.java:552)
+ ... 4 more
+******************************** BOTTOM OF DATA ********************************
+
+
